@@ -4,8 +4,7 @@
   by Europe. The same is the case for many other bands. This project attempts
   to create a list of the single best song of every more or less popular
   band. For now it's only a playlist, but I might create a service to embed
-  it into popular music software later. The current list is as follows:
-#+INCLUDE: "./playlist.org" :minlevel 1
+  it into popular music software later. The current list is [[./playlist.org][here]].
 * Contribution
 ** Suggestions (band and song)
    Create a pull request for `playlist.org`. I will only accept pull requests
