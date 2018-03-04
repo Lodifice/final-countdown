@@ -1,0 +1,21 @@
+#+TITLE: Final Countdown
+* Concept
+  The fame of Final Countdown is a meme, because no one knows any other song
+  by Europe. The same is the case for many other bands. This project attempts
+  to create a list of the single best song of every more or less popular
+  band. For now it's only a playlist, but I might create a service to embed
+  it into popular music software later. The current list is as follows:
+#+INCLUDE: "./playlist.org" :minlevel 1
+* Contribution
+** Suggestions (band and song)
+   Create a pull request for `playlist.org`. I will only accept pull requests
+   that
+   - preserve the structure of the Org file
+   - preserve the alphabetical order
+   - use spaces instead of tabs for indentation
+** Requests for new bands (without giving a song)
+   Create an issue.
+** Change requests for bands that are already in the list
+   Create an issue.
+* License
+   Srsly? This is public domain.
