@@ -17,4 +17,4 @@
 ** Change requests for bands that are already in the list
    Create an issue.
 * License
-   Srsly? This is public domain.
+   [[./LICENSE][CC0]]
