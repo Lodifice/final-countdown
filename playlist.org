@@ -1,3 +1,4 @@
 * Final Countdown playlist
+  - Blur :: Song 2
   - Darude :: Sandstorm
   - Europe :: Final Countdown
