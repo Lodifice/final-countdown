@@ -13,8 +13,8 @@
    - preserve the alphabetical order
    - use spaces instead of tabs for indentation
 ** Requests for new bands (without giving a song)
-   Create an issue.
+   [[https://github.com/Lodifice/final-countdown/issues/new?template=Feature_request.md][Create an issue]].
 ** Change requests for bands that are already in the list
-   Create an issue.
+   [[https://github.com/Lodifice/final-countdown/issues/new?template=Bug_report.md][Create an issue]].
 * License
    [[./LICENSE][CC0]]
