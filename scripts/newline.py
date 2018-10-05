@@ -29,20 +29,13 @@
 
 import sys
 
-def is_there(filename):
+def is_there(file):
     '''
     Read the file and check for a last newline and
     return a integer representing it
     '''
 
-    try:
-        f = open(filename, 'r')
-    except IOError:
-        print("Unable to open fiel [%s]" % filename)
-        print("Program terminating unexpectedly.")
-        sys.exit(1)
-
-    data = f.readlines()
+    data = file.readlines()
 
     if data[-1] is not "\n" and data[-1][-1] is "\n":
         return 0
