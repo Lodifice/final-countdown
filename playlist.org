@@ -5,10 +5,14 @@
   - Europe :: Final Countdown
   - Evanescence :: Bring Me to Life
   - Las Ketchup :: Aserejé
+  - Lordi :: Hard Rock Hallelujah
   - O-Zone :: Dragostea din tei
   - Rednex :: Cotton Eye Joe
   - Rick Astley :: Never Gonna Give You Up
   - Status Quo :: In the Army Now
   - The Proclaimers :: I'm Gonna Be (500 Miles)
   - Toto :: Africa
+<<<<<<< HEAD
   - Vanilla Ice :: Ice Ice Baby
+=======
+>>>>>>> Include Lordi :: Hard Rock Hallelujah
