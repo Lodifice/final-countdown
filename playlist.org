@@ -12,7 +12,4 @@
   - Status Quo :: In the Army Now
   - The Proclaimers :: I'm Gonna Be (500 Miles)
   - Toto :: Africa
-<<<<<<< HEAD
   - Vanilla Ice :: Ice Ice Baby
-=======
->>>>>>> Include Lordi :: Hard Rock Hallelujah
