@@ -40,7 +40,6 @@
 
 import newline
 import tabspaces
-import alphabetical
 import sys
 
 filename = "../playlist.org"
@@ -88,19 +87,6 @@ elif tabs_state is 13:
 
 # End the no-tabs tests
 # ----------------------------------
-# Start the alphabetical order tests
-
-alphabetical_state = alphabetical.order(file)
-
-if alphabetical_state is 0:
-    print("[✔] Alphabetical order correct!")
-    alphabetical_code = 0
-elif alphabetical_state is 21:
-    print("[✖] The playlist is not in alphabetical order!")
-    alphabetical_code = 21
-
-# End the alphabetical order tests
-# --------------------------------
 # Calculate return code
 
 return_code = 0
@@ -110,9 +96,6 @@ if nl_state is not 0:
 
 if tabs_state is not 0:
     return_code += 2
-
-if alphabetical_state is not 0:
-    return_code += 4
 
 if return_code is not 0:
     sys.exit(return_code)
