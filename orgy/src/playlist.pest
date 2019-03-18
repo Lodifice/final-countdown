@@ -1,0 +1,6 @@
+entry = { &(ANY) ~ "-" ~ interprete ~ "::" ~ title }
+entries = { (entry ~ "\n")+ }
+playlist = { SOI ~ "* Final Countdown playlist" ~ "\n" ~ entries ~ EOI }
+interprete = { (!":" ~ ANY)+ }
+title = { (!"\n" ~ ANY)+ }
+WHITESPACE = _{ " " }
