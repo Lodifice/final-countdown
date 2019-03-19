@@ -42,7 +42,7 @@ import newline
 import tabspaces
 import sys
 
-filename = "../playlist.org"
+filename = "playlist.org"
 
 # Open the file
 

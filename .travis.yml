@@ -1,0 +1,14 @@
+matrix:
+    include:
+        - language: python
+          python:
+              - 3.6
+          before_install:
+              - chmod +x scripts/verification.py
+          script:
+              - scripts/verification.py
+        - language: rust
+          install:
+              - (cd orgy && cargo build --release)
+          script:
+              - ./orgy/target/release/orgy < playlist.org
