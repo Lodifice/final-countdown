@@ -17,7 +17,7 @@
 ** Change requests for bands that are already in the list
    [[https://github.com/Lodifice/final-countdown/issues/new?template=Bug_report.md][Create an issue]].
 * Want to listen to the goodness?
-  It's now possible to do so on [[https://open.spotify.com/user/marauderxtreme/playlist/7q3YCs5ioZhIMbZpVUknEf][Spotify]].
+  It's now possible to do so on [[https://open.spotify.com/user/marauderxtreme/playlist/7q3YCs5ioZhIMbZpVUknEf][Spotify]] or [[https://tidal.com/embed/?type=p&id=c0864eed-6244-47d7-9cfd-0bca7bfbbbd5][TIDAL]].
   It gets updated fairly regular after every Pull Request goes through.
   Don't have Spotify but want to have a look at the current state? I got you [[https://open.spotify.com/embed/user/marauderxtreme/playlist/7q3YCs5ioZhIMbZpVUknEf][covered]].
 * License
