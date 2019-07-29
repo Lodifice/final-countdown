@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018 Christoph Kepler <development@kepler.international>
+# Copyright (c) 2018 - 2019 Christoph Kepler <development@kepler.international>
 #
 # This is free and unencumbered software released into the public domain.
 #
@@ -27,20 +27,38 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 #
-# Internal error codes:
+# Error codes:
 # -1 - no final newline error (one newline to few)
 #  0 - Everything fine
 #  1 - undefinded final newline error (newline not detectable)
-#  2 - one final newline to much error (2 newlines)
+#  2 - one final newline too much error (2 newlines)
+# 12 - tab error and no final newline error
 # 13 - tab error (unlucky 13)
+# 14 - tab error and undefinded final newline error
+# 15 - tab error and one final newline too much error
+# 20 - alphabetical order error and no final newline error
 # 21 - alphabetical order error (wrong order hence 21)
+# 22 - alphabetical order error and undefinded final
+#      newline error
+# 23 - alphabetical order error and one final newline too
+#      much error
+# 33 - alphabetical order error and tab error and no final
+#      newline error
+# 34 - alphabetical order error and tab error
+# 35 - alphabetical order error and tab error and undefinded
+#      final newline error
+# 36 - alphabetical order error and tab error and one final
+#      newline too much error
 # 42 - file not openable/readable error (this could mean
 #      anything hence 42)
+# 84 - file not openable/readable error on second import
+#      (same as 42 but twice as shady)
 #
+
+import sys
 
 import newline
 import tabspaces
-import sys
 
 filename = "playlist.org"
 
@@ -50,7 +68,7 @@ try:
     file = open(filename, 'r')
 except IOError:
     print("[✖] Unable to open file [%s]" % filename)
-    print("Script terminating unexpectedly.")
+    print("Script terminating unexpectedly before first import.")
     sys.exit(42)
 
 # Return an error code and exit if the file is not readable
@@ -59,10 +77,10 @@ except IOError:
 
 nl_state = newline.is_there(file)
 
-if nl_state:
+if nl_state is 1:
     print("[✔] The final newline is placed properly!")
     nl_code = 0
-elif nl_state is 1:
+elif not nl_state:
     print("[✖] The final newline could not be found.")
     nl_code = 1
 elif nl_state is 2:
@@ -73,29 +91,37 @@ elif nl_state is -1:
     nl_code = -1
 
 # End the final newline tests
-# ---------------------------
+# --------------------------------------
+# Reload file since it has been consumed
+
+file.close()
+
+try:
+    file = open(filename, 'r')
+except IOError:
+    print("[✖] Unable to open file [%s]" % filename)
+    print("Script terminating unexpectedly before second import.")
+    sys.exit(84)
+
+# Return a doubled error code and exit if the file is not readable
+# ----------------------------------------------------------------
 # Start the no-tabs tests
 
 tabs_state = tabspaces.only_spaces(file)
 
 if tabs_state is 0:
     print("[✔] No TABS found!")
-    tab_code = 0
+    tabs_code = 0
 elif tabs_state is 13:
     print("[✖] There was a TAB found!")
-    tab_code = 13
+    tabs_code = 13
 
 # End the no-tabs tests
-# ----------------------------------
-# Calculate return code
+# ----------------------------------------
+# Close the file and calculate return code
 
-return_code = 0
+file.close()
 
-if nl_state is not 0:
-    return_code += 1
+return_code = nl_code + tabs_code
 
-if tabs_state is not 0:
-    return_code += 2
-
-if return_code is not 0:
-    sys.exit(return_code)
+sys.exit(return_code)
