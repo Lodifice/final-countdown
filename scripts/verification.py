@@ -77,16 +77,16 @@ except IOError:
 
 nl_state = newline.is_there(file)
 
-if nl_state is 1:
+if nl_state == 1:
     print("[✔] The final newline is placed properly!")
     nl_code = 0
 elif not nl_state:
     print("[✖] The final newline could not be found.")
     nl_code = 1
-elif nl_state is 2:
+elif nl_state == 2:
     print("[✖] There was one final newline too much.")
     nl_code = 2
-elif nl_state is -1:
+elif nl_state == -1:
     print("[✖] There was no final newline.")
     nl_code = -1
 
@@ -109,10 +109,10 @@ except IOError:
 
 tabs_state = tabspaces.only_spaces(file)
 
-if tabs_state is 0:
+if tabs_state == 0:
     print("[✔] No TABS found!")
     tabs_code = 0
-elif tabs_state is 13:
+elif tabs_state == 13:
     print("[✖] There was a TAB found!")
     tabs_code = 13
 
