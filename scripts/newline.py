@@ -27,15 +27,11 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
-import sys
-
-def is_there(file):
+def is_there(data):
     '''
     Read the file and check for a last newline and
     return an integer representing it
     '''
-
-    data = file.readlines()
 
     if data[-1] is not "\n" and data[-1][-1] is "\n":
         return 1

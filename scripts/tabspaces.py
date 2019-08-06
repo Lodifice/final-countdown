@@ -27,20 +27,14 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
-import re
-
-def only_spaces(file):
+def only_spaces(data):
     '''
     Read the file and check if there are
     any TAB characters
     '''
 
-    tabs = re.compile("/t")
-
-    data = file.read()
-
     for line in data:
-        if line == '\t':
+        if "\t" in line:
             return 13
 
     return 0

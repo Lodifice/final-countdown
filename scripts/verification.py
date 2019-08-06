@@ -51,8 +51,6 @@
 #      newline too much error
 # 42 - file not openable/readable error (this could mean
 #      anything hence 42)
-# 84 - file not openable/readable error on second import
-#      (same as 42 but twice as shady)
 #
 
 import sys
@@ -62,7 +60,7 @@ import tabspaces
 
 filename = "playlist.org"
 
-# Open the file
+# Open the file and read it into a variable and close it
 
 try:
     file = open(filename, 'r')
@@ -71,11 +69,15 @@ except IOError:
     print("Script terminating unexpectedly before first import.")
     sys.exit(42)
 
+data = file.readlines()
+
+file.close()
+
 # Return an error code and exit if the file is not readable
 # ---------------------------------------------------------
 # Start the final newline tests
 
-nl_state = newline.is_there(file)
+nl_state = newline.is_there(data)
 
 if nl_state == 1:
     print("[✔] The final newline is placed properly!")
@@ -91,23 +93,10 @@ elif nl_state == -1:
     nl_code = -1
 
 # End the final newline tests
-# --------------------------------------
-# Reload file since it has been consumed
-
-file.close()
-
-try:
-    file = open(filename, 'r')
-except IOError:
-    print("[✖] Unable to open file [%s]" % filename)
-    print("Script terminating unexpectedly before second import.")
-    sys.exit(84)
-
-# Return a doubled error code and exit if the file is not readable
-# ----------------------------------------------------------------
+# ---------------------------
 # Start the no-tabs tests
 
-tabs_state = tabspaces.only_spaces(file)
+tabs_state = tabspaces.only_spaces(data)
 
 if tabs_state == 0:
     print("[✔] No TABS found!")
@@ -119,8 +108,6 @@ elif tabs_state == 13:
 # End the no-tabs tests
 # ----------------------------------------
 # Close the file and calculate return code
-
-file.close()
 
 return_code = nl_code + tabs_code
 
