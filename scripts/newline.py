@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018 Christoph Kepler <development@kepler.international>
+# Copyright (c) 2018 - 2019 Christoph Kepler <development@kepler.international>
 #
 # This is free and unencumbered software released into the public domain.
 #
@@ -27,22 +27,18 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
-import sys
-
-def is_there(file):
+def is_there(data):
     '''
     Read the file and check for a last newline and
-    return a integer representing it
+    return an integer representing it
     '''
 
-    data = file.readlines()
-
     if data[-1] is not "\n" and data[-1][-1] is "\n":
-        return 0
-    elif data[-1]:
+        return 1
+    elif data[-1] is "\n":
         return 2
     elif data[-1][-1] is not "\n":
         return -1
     else:
-        return 1
+        return 0
 

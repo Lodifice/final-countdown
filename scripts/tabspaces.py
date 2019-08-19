@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018 Christoph Kepler <development@kepler.international>
+# Copyright (c) 2018 - 2019 Christoph Kepler <development@kepler.international>
 #
 # This is free and unencumbered software released into the public domain.
 #
@@ -27,14 +27,14 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
-import re
+def only_spaces(data):
+    '''
+    Read the file and check if there are
+    any TAB characters
+    '''
 
-def only_spaces(file):
-
-    tabs = re.compile("/t")
-
-    for line in file:
-        if tabs.match(line):
+    for line in data:
+        if "\t" in line:
             return 13
 
     return 0
