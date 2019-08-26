@@ -1,4 +1,5 @@
 #+TITLE: Final Countdown
+[[https://travis-ci.org/Lodifice/final-countdown][https://travis-ci.org/Lodifice/final-countdown.svg?branch=master]]
 * Concept
   The fame of Final Countdown is a meme, because no one knows any other song
   by Europe. The same is the case for many other bands. This project attempts
