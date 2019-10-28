@@ -8,7 +8,7 @@
   it into popular music software later. The current list is [[./playlist.org][here]].
 * Contribution
 ** Suggestions (band and song)
-   Create a pull request for `playlist.org`. I will only accept pull requests
+   Create a pull request for ~playlist.org~. I will only accept pull requests
    that
    - preserve the structure of the Org file
    - preserve the alphabetical order
