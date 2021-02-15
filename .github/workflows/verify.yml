@@ -1,0 +1,40 @@
+---
+
+name: Verify playlist.org
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python_version: 3.x
+      - name: Make verification.py executable
+        run: chmod +x scripts/verification.py
+      - name: Run verification
+        run: ./scripts/verification.py
+  orgy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Make orgy
+        working-directory: orgy
+        run: cargo build --release
+      - name: Run orgy
+        run: ./orgy/target/release/orgy < playlist.org
